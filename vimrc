@@ -27,3 +27,5 @@ set incsearch
 
 " Plugin: tagbar
 nmap <F8> :TagbarToggle<CR>
+
+autocmd BufRead,BufNewFile *.launch setfiletype roslaunch
