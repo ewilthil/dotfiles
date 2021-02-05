@@ -1,31 +1,38 @@
-#!/bin/bash
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+!/bin/bash
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc bash_profile functions aliases gitconfig tmux.conf gitignore"    # list of files/folders to symlink in homedir
+# Up from scripts dir
+cd ..
 
-##########
+dotfilesDir=$(pwd)
 
-# create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
+function linkDotfile {
+  dest="${HOME}/${1}"
+  dateStr=$(date +%Y-%m-%d-%H%M)
 
-# change to the dotfiles directory
-echo "Changing to the $dir directory"
-cd $dir
-echo "...done"
+  if [ -h ~/${1} ]; then
+    # Existing symlink 
+    echo "Removing existing symlink: ${dest}"
+    rm ${dest} 
 
-# move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks
-for file in $files; do
-	if [ -L ~/.$file ]
-then
-	rm ~/.$file
-else
-	mv ~/.$file $olddir/
-fi
+  elif [ -f "${dest}" ]; then
+    # Existing file
+    echo "Backing up existing file: ${dest}"
+    mv ${dest}{,.${dateStr}}
 
-echo "Creating symlink to $file in home directory."
-ln -s $dir/$file ~/.$file
-done
+  elif [ -d "${dest}" ]; then
+    # Existing dir
+    echo "Backing up existing dir: ${dest}"
+    mv ${dest}{,.${dateStr}}
+  fi
+
+  echo "Creating new symlink: ${dest}"
+  ln -s ${dotfilesDir}/${1} ${dest}
+}
+
+linkDotfile .vimrc
+linkDotfile .tmux.conf
+linkDotfile .bashrc
+linkDotfile .bash_profile
+linkDotfile .gitconfig
+linkDotfile .gitmessage
+linkDotfile .git-completion.bash
