@@ -97,5 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /opt/ros/noetic/setup.zsh
 source "/home/ewilthil/.vim/plugged/gruvbox/gruvbox_256palette.sh"
+
+# Start a tmux with ros sourced. My own catkin workspace may be added later
+alias rosmux="source /opt/ros/noetic/setup.zsh; tmux"
