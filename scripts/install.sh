@@ -32,3 +32,5 @@ function linkDotfile {
 linkDotfile .vimrc
 linkDotfile .tmux.conf
 linkDotfile .zshrc
+linkDotfile .gitconfig
+linkDotfile .gitignore
