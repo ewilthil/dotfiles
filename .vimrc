@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'mrk21/yaml-vim'
 call plug#end()
 
 " Cosmetic changes
