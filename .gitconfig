@@ -1,6 +1,6 @@
 [user]
 	name = Erik Wilthil
-	email = "erik.wilthil@ntnu.no"
+	email = erik.wilthil@zeabuz.com
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
