@@ -51,3 +51,6 @@ autocmd vimenter * NERDTree | wincmd p
 " If NERDTree is the only window, close vim
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeIgnore = ['\.pyc$']
+
+set visualbell
+set t_vb=
