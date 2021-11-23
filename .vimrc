@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mrk21/yaml-vim'
+Plug 'tmhedberg/simpylFold'
 call plug#end()
 
 " Cosmetic changes
@@ -37,8 +38,7 @@ set hlsearch
 set incsearch
 
 " Plugin: tagbar
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_left = 1
+nnoremap <silent> <F8> :TagbarToggle<CR>
 
 autocmd BufRead,BufNewFile *.launch setfiletype roslaunch
 " GeoJSON (syntax and format)
