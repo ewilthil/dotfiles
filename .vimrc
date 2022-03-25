@@ -50,7 +50,11 @@ set incsearch
 " Plugin: tagbar
 nnoremap <silent> <F8> :TagbarToggle<CR>
 
+" ROS interface files
 autocmd BufRead,BufNewFile *.launch setfiletype roslaunch
+autocmd BufRead,BufNewFile *.msg setfiletype rosmsg
+autocmd BufRead,BufNewFile *.srv setfiletype rossrv
+autocmd BufRead,BufNewFile *.action setfiletype rosaction
 " GeoJSON (syntax and format)
 autocmd BufRead,BufNewFile *.geojson setfiletype json
 com! FormatJSON %!python -m json.tool
