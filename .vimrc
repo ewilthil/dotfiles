@@ -6,15 +6,25 @@ endif
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'majutsushi/tagbar'
-Plug 'morhetz/gruvbox'
-Plug 'dense-analysis/ale'
+Plug 'morhetz/gruvbox' " Colorscheme
+Plug 'dense-analysis/ale' " Linting
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mrk21/yaml-vim'
 Plug 'tmhedberg/simpylFold'
+Plug 'itchyny/lightline.vim'
+Plug 'shinchu/lightline-gruvbox.vim'
+Plug 'tpope/vim-commentary'
 call plug#end()
+
+" Lightline
+set noshowmode
+let g:lightline = {}
+let g:lightline = {
+      \ 'colorscheme' : 'gruvbox'
+      \ }
 
 " Cosmetic changes
 set number
@@ -54,3 +64,8 @@ let NERDTreeIgnore = ['\.pyc$']
 
 set visualbell
 set t_vb=
+
+let g:ale_linters = {
+            \ 'python' : ['pycodestyle']
+\}
+let g:ale_python_pycodestyle_executable = 'python -m pycodestyle'
