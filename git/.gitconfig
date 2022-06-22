@@ -3,6 +3,6 @@
 	email = erik.wilthil@zeabuz.com
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore
+	excludesfile = /home/ewilthil/.gitignore
 [remote "origin"]
 	prune = true
