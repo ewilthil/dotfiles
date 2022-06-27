@@ -6,3 +6,7 @@
 	excludesfile = /home/ewilthil/.gitignore
 [remote "origin"]
 	prune = true
+[credential]
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
+[credential "https://dev.azure.com"]
+	useHttpPath = true
